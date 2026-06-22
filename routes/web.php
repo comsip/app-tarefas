@@ -14,4 +14,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('equipes', EquipeController::class);
-Route::resource('equipes', ProjetoController::class);
+Route::resource('projetos', ProjetoController::class);
