@@ -7,79 +7,67 @@ use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Exibe a lista de comentarios 
     public function index()
     {
-        //
+        $comentarios = Comentario::all();
+        return view('comentarios.index', compact('comentarios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Exibe o formulário de criação de um novo comentario
     public function create()
     {
-        //
+        return view('comentarios.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Salva os dados de um novo comentario no banco de dados
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'texto' => 'required|string',
+            'data_hora' => 'nullable|date',
+        ]);
+
+        Comentario::create($data);
+
+        return redirect()->route('comentarios.index')->with('success', 'Comentario cadastrado com sucesso!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Comentario  $comentario
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Comentario $comentario)
+    // Exibe os dados de um comentario específico
+    public function show($id)
     {
-        //
+        $comentario = Comentario::findOrFail($id);
+        return view('comentarios.show', compact('comentario'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Comentario  $comentario
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Comentario $comentario)
+    // Exibe o formulário de edição de um comentario 
+    public function edit($id)
     {
-        //
+        $comentario = Comentario::findOrFail($id);
+        return view('comentarios.edit', compact('comentario'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comentario  $comentario
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Comentario $comentario)
+    // Atualiza os dados do comentario no banco de dados
+    public function update(Request $request, $id)
     {
-        //
+        $comentario = Comentario::findOrFail($id);
+
+        $data = $request->validate([
+            'texto' => 'required|string',
+            'data_hora' => 'nullable|date',
+        ]);
+
+        $comentario->update($data);
+
+        return redirect()->route('comentarios.index')->with('success', 'Comentario atualizado com sucesso!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Comentario  $comentario
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Comentario $comentario)
+    // Remove o comentario do banco de dados
+    public function destroy($id)
     {
-        //
+        $comentario = Comentario::findOrFail($id);
+        $comentario->delete();
+
+        return redirect()->route('comentarios.index')->with('success', 'Comentario removido com sucesso!');
     }
 }
