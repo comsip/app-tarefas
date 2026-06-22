@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrazoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,13 @@ use App\Http\Controllers\PrazoController;
 |
 */
 
-Route::get('/novo', function () {
-    return view('novo');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::resource('prazos', PrazoController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
