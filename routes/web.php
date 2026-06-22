@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\ProjetoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,5 +13,5 @@ use App\Http\Controllers\EquipeController;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::resource('equipes', EquipeController::class);
+Route::resource('equipes', ProjetoController::class);
