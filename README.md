@@ -1,5 +1,4 @@
-````md
-# Sistema de Controle de Atividades — Integração com Git
+## Sistema de Controle de Atividades — Integração com Git
 
 Repositório oficial da turma:
 https://github.com/comsip/app-tarefas.git
@@ -32,7 +31,6 @@ Abra o terminal dentro da pasta do seu projeto:
 ```bash
 cd caminho/do/seu-projeto
 ```
-````
 
 Exemplo (Windows):
 
