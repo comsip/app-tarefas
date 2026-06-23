@@ -151,8 +151,6 @@ Acesse:
 http://127.0.0.1:8000
 ```
 
-<<<<<<< HEAD
-
 ## Controle de versão
 
 O projeto utiliza Git seguindo fluxo com branches:
@@ -184,5 +182,3 @@ Agora será feita a integração desses projetos individuais ao repositório rem
 # Fluxo
 
 Projeto local → Git init → Remote → Commit → Branch → Push → Pull Request
-
-> > > > > > > origin/aluno-natalia

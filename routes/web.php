@@ -10,6 +10,8 @@ use App\Http\Controllers\PrazoController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\ProjetoController;
+use App\Http\Controllers\PrazoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +44,7 @@ Route::resource('produtos', ProdutoController::class); // 2. Adicionamos a rota 
 Route::resource('status', StatusController::class);
 Route::resource('equipes', EquipeController::class);
 Route::resource('projetos', ProjetoController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
