@@ -10,6 +10,7 @@ class Status extends Model
     use HasFactory;
 
     protected $table = 'status'; // 🔥 CORREÇÃO PRINCIPAL
+    protected $primaryKey = 'id'; // 🔥 CORREÇÃO PRINCIPAL
 
     protected $fillable = ['nome'];
 }
