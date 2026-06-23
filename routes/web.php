@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\RelatorioController;
+use App\Http\Controllers\ProdutoController; // 1. Adicionamos o controlador do produto aqui
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotificacaoController;
 use App\Http\Controllers\EquipeController;
@@ -36,3 +38,7 @@ Route::patch('/notificacao/{id}/lida', [NotificacaoController::class, 'marcarCom
     ->name('notificacao.lida');;
 Route::resource('equipes', EquipeController::class);
 Route::resource('comentarios', ComentarioController::class);
+Route::resource('relatorios', RelatorioController::class);
+Route::resource('produtos', ProdutoController::class); // 2. Adicionamos a rota do produto aqui no final
+Route::resource('equipes', EquipeController::class);
+Route::resource('projetos', ProjetoController::class);

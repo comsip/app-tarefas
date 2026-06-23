@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # Sistema Escolar - CRUD Laravel
+=======
+<<<<<<< HEAD
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+>>>>>>> origin/aluno-celso
 
 Projeto desenvolvido em Laravel para gerenciamento de uma escola, contendo cadastro e controle de usuários, alunos, professores e turmas.
 
@@ -67,8 +72,14 @@ app/
 database/
  └── migrations/
 
+<<<<<<< HEAD
 resources/
  └── views/
+=======
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+## Sistema de Controle de Atividades — Integração com Git
+>>>>>>> origin/aluno-celso
 
 routes/
  └── web.php
@@ -148,7 +159,11 @@ Acesse:
 ```
 http://127.0.0.1:8000
 ```
+<<<<<<< HEAD
 
 ## Controle de versão
 
 O projeto utiliza Git seguindo fluxo com branches:
+=======
+>>>>>>> 33032d2fedee035c238edd082c4ff62a0d10ecf2
+>>>>>>> origin/aluno-celso
