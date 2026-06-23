@@ -1,194 +1,152 @@
-## Sistema de Controle de Atividades — Integração com Git
+# Sistema Escolar - CRUD Laravel
 
-Repositório oficial da turma:
-https://github.com/comsip/app-tarefas.git
+Projeto desenvolvido em Laravel para gerenciamento de uma escola, contendo cadastro e controle de usuários, alunos, professores e turmas.
 
----
+## Sobre o projeto
 
-# Contexto da Atividade
+O sistema permite realizar operações CRUD (Create, Read, Update, Delete) para as principais entidades:
 
-Cada aluno já possui localmente um projeto Laravel 8 com sua entidade e CRUD implementado.
+- Usuários
+- Alunos
+- Professores
+- Turmas
 
-Agora será feita a integração desses projetos individuais ao repositório remoto oficial da turma.
+Foi desenvolvido utilizando Laravel com Blade, Bootstrap e banco de dados MySQL.
 
----
+## Funcionalidades
 
-# Regras Gerais
+### Usuários
+- Cadastro de usuários
+- Listagem de usuários
+- Visualização de detalhes
+- Edição de dados
+- Exclusão de usuários
+- Senhas armazenadas de forma criptografada
 
--   Não utilizar a branch `main` diretamente
--   Não sobrescrever código de outros alunos
--   Não excluir arquivos do projeto base
--   Cada aluno deve trabalhar em uma branch própria
--   Cada aluno deve enviar apenas sua implementação
--   O envio será feito via Pull Request
+### Alunos
+- Cadastro de alunos
+- Edição de informações
+- Visualização dos dados
+- Exclusão de alunos
+- Associação do aluno a uma turma
 
----
+### Professores
+- Cadastro de professores
+- Listagem de professores
+- Edição e remoção
+- Relacionamento com turmas
 
-# 1. Abrir o projeto local
+### Turmas
+- Cadastro de turmas
+- Definição de sala e horário
+- Associação com professor
+- Visualização dos alunos pertencentes à turma
 
-Abra o terminal dentro da pasta do seu projeto:
+## Tecnologias utilizadas
 
-```bash
-cd caminho/do/seu-projeto
+- PHP
+- Laravel
+- MySQL
+- Blade Templates
+- Bootstrap
+- Composer
+- Git/GitHub
+
+## Estrutura do projeto
+
+```
+app/
+ ├── Http/
+ │    └── Controllers/
+ └── Models/
+
+database/
+ └── migrations/
+
+resources/
+ └── views/
+
+routes/
+ └── web.php
 ```
 
-Exemplo (Windows):
+## Banco de dados
+
+Principais tabelas:
+
+- usuarios
+- alunos
+- professores
+- turmas
+
+Relacionamentos:
+
+- Professor possui várias turmas
+- Turma possui vários alunos
+- Aluno pertence a uma turma
+
+## Como executar o projeto
+
+### 1. Clonar o repositório
 
 ```bash
-cd C:\xampp\htdocs\meu-projeto
+git clone URL_DO_REPOSITORIO
 ```
 
----
-
-# 2. Verificar ou inicializar Git
-
-Verifique se já existe Git no projeto:
+### 2. Entrar na pasta
 
 ```bash
-git status
+cd app-tarefas
 ```
 
-Se não for um repositório Git:
+### 3. Instalar dependências
 
 ```bash
-git init
+composer install
 ```
 
----
-
-# 3. Conectar ao repositório remoto
-
-Adicionar o repositório oficial da turma:
+### 4. Criar arquivo de ambiente
 
 ```bash
-git remote add origin https://github.com/comsip/app-tarefas.git
+copy .env.example .env
 ```
 
-Verificar se foi adicionado corretamente:
+### 5. Gerar chave Laravel
 
 ```bash
-git remote -v
+php artisan key:generate
 ```
 
----
-
-# 4. Primeiro commit do projeto local
-
-Adicionar todos os arquivos:
-
-```bash
-git add .
-```
-
-Criar o commit inicial:
-
-```bash
-git commit -m "chore: projeto inicial do aluno com CRUD"
-```
-
----
-
-# 5. Criar branch individual (OBRIGATÓRIO)
-
-Cada aluno deve criar sua própria branch:
-
-```bash
-git checkout -b aluno-nome
-```
-
-Exemplos:
-
-```bash
-git checkout -b aluno-elizangela
-git checkout -b aluno-murilo
-git checkout -b aluno-rodrigo
-```
-
----
-
-# 6. Enviar projeto para o GitHub
-
-Enviar a branch criada:
-
-```bash
-git push -u origin aluno-nome
-```
+### 6. Configurar banco no `.env`
 
 Exemplo:
 
-```bash
-git push -u origin aluno-elizangela
+```
+DB_DATABASE=nome_banco
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
----
-
-# 7. Criar Pull Request
-
-No GitHub:
-
-1. Acesse o repositório da turma
-2. Clique em **Compare & pull request**
-3. Base: `main`
-4. Compare: sua branch
-5. Criar Pull Request
-6. Título: `CRUD - Nome do Aluno - Entidade`
-
----
-
-# Problemas comuns
-
-## Erro: "remote already exists"
+### 7. Rodar migrations
 
 ```bash
-git remote set-url origin https://github.com/comsip/app-tarefas.git
+php artisan migrate
 ```
 
----
-
-## Erro: "repository not found"
-
-Verificar:
-
--   URL correta do repositório
--   Permissão de acesso ao GitHub
--   Login correto na conta Git
-
----
-
-## Erro: "fetch first / rejected push"
-
-Executar:
+### 8. Iniciar servidor
 
 ```bash
-git pull origin main --allow-unrelated-histories
+php artisan serve
 ```
 
-Depois:
+Acesse:
 
-```bash
-git add .
-git commit -m "merge inicial com repositório base"
-git push -u origin aluno-nome
+```
+http://127.0.0.1:8000
 ```
 
----
+## Controle de versão
 
-## Erro: "permission denied (403)"
+O projeto utiliza Git seguindo fluxo com branches:
 
--   Usuário não tem permissão no repositório
--   Git está logado em conta errada
--   Necessário login correto no GitHub
 
----
-
-# Fluxo completo simplificado
-
-```text
-Projeto local → Git init → Remote → Commit → Branch → Push → Pull Request
-```
-
----
-
-# Objetivo final
-
-Cada aluno deve integrar seu CRUD individual ao sistema coletivo através de Pull Requests no repositório oficial da turma.
