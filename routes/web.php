@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\NotificacaoController;
+use App\Http\Controllers\NotificacaoController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\ProjetoController;
 use App\Http\Controllers\RelatorioController;
@@ -34,3 +35,4 @@ Route::get('/notificacao/{id}', [NotificacaoController::class, 'show'])->name('n
 Route::patch('/notificacao/{id}/lida', [NotificacaoController::class, 'marcarComoLida'])
     ->name('notificacao.lida');;
 Route::resource('equipes', EquipeController::class);
+Route::resource('comentarios', ComentarioController::class);
