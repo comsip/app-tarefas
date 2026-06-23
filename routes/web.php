@@ -2,12 +2,8 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\UsuarioController;
-use App\Http\Controllers\RelatorioController;
-use App\Http\Controllers\ProdutoController; // 1. Adicionamos o controlador do produto aqui
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotificacaoController;
-use App\Http\Controllers\EquipeController;
-use App\Http\Controllers\ProjetoController;
 use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\ProdutoController; // 1. Adicionamos o controlador do produto aqui
 use App\Http\Controllers\PrazoController;
