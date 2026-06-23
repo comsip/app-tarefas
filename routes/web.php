@@ -11,6 +11,9 @@ use App\Http\Controllers\ProjetoController;
 use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\ProdutoController; // 1. Adicionamos o controlador do produto aqui
 use App\Http\Controllers\PrazoController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\ProjetoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,5 +43,6 @@ Route::resource('equipes', EquipeController::class);
 Route::resource('comentarios', ComentarioController::class);
 Route::resource('relatorios', RelatorioController::class);
 Route::resource('produtos', ProdutoController::class); // 2. Adicionamos a rota do produto aqui no final
+Route::resource('status', StatusController::class);
 Route::resource('equipes', EquipeController::class);
 Route::resource('projetos', ProjetoController::class);
