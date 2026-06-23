@@ -6,8 +6,7 @@ use App\Http\Controllers\ProjetoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\ProdutoController; // 1. Adicionamos o controlador do produto aqui
-
-
+use App\Http\Controllers\PrazoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +16,7 @@ use App\Http\Controllers\ProdutoController; // 1. Adicionamos o controlador do p
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+<<<<<<< HEAD
 >>>>>>> origin/aluno-murilo
 */
 
@@ -29,5 +29,5 @@ Route::resource('equipes', EquipeController::class);
 Route::resource('projetos', ProjetoController::class);
 Route::resource('usuarios', UsuarioController::class);
 Route::resource('relatorios', RelatorioController::class);
-
 Route::resource('produtos', ProdutoController::class); // 2. Adicionamos a rota do produto aqui no final
+Route::resource('prazos', PrazoController::class);

@@ -19,8 +19,42 @@
 
         @include('partials.messages')
 
-        @yield('content')
+        <meta charset="UTF-8">
+        <title>@yield('title', 'Gestão de Prazos')</title>
 
-    </div>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-</body>
+        <style>
+            body {
+                padding-top: 2rem;
+                background-color: #f8f9fa;
+            }
+
+            .card {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 1rem;
+            }
+        </style>
+        </head>
+
+        <body>
+
+            <div class="container">
+
+                <h1 class="mb-4 text-center">
+                    Sistema de Gerenciamento de Prazos
+                </h1>
+
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar">
+                        </button>
+                    </div>
+                @endif
+
+                @yield('content')
+
+            </div>
+        </body>
