@@ -149,11 +149,4 @@ http://127.0.0.1:8000
 
 O projeto utiliza Git seguindo fluxo com branches:
 
-- main → código principal
-- aluno-nome → desenvolvimento individual
 
-As alterações são enviadas através de Pull Requests.
-
-## Desenvolvedor
-
-Projeto desenvolvido como atividade acadêmica utilizando Laravel.
